@@ -40,12 +40,11 @@ class Maze {
         this.maze[x][y].cell.classList.toggle("visited");
         const genStep = (x, y) => {
             setTimeout(() => {
-                if (this.hasUnvisitedNeighbour(x, y)) {
-                    let allUnvisited = this.getUnvisitedNeighbours(x, y)
-                    let nextNeighbour = allUnvisited[Math.floor(Math.random() * allUnvisited.length)]
+                let unvisitedNeighbours = this.getUnvisitedNeighbours(x, y);
+                if (unvisitedNeighbours.length) {
+                    let nextNeighbour = unvisitedNeighbours[Math.floor(Math.random() * unvisitedNeighbours.length)]
                     nextNeighbour.visited = true;
                     nextNeighbour.cell.classList.toggle("visited");
-                    path.push(nextNeighbour);
                     if (nextNeighbour.x > x) {
                         this.maze[x][y].right = false;
                         nextNeighbour.left = false;
@@ -78,6 +77,7 @@ class Maze {
                         nextNeighbour.cell.classList.toggle("bottom");
                         nextNeighbour.cell.classList.toggle("no-bottom");
                     }
+                    path.push(nextNeighbour);
                     genStep(nextNeighbour.x, nextNeighbour.y);
                 } else {
                     path.pop();
@@ -87,10 +87,6 @@ class Maze {
             }, speed);
         }
         genStep(x, y);
-    }
-
-    hasUnvisitedNeighbour = (x, y) => {
-        return this.getNeighbours(x, y).some((el) => (el.visited === false));
     }
 
     getNeighbours = (x, y) => {
