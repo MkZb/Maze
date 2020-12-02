@@ -37,6 +37,10 @@ class Maze {
     generateMaze = (x = 0, y = 0, speed = 100) => {
         let path = []
         this.maze[x][y].visited = true;
+        this.maze[0][0].top = false;
+        this.maze[0][0].cell.classList.toggle("top");
+        this.maze[this.width - 1][this.height - 1].bottom = false;
+        this.maze[this.width - 1][this.height - 1].cell.classList.toggle("bottom");
         this.maze[x][y].cell.classList.toggle("visited");
         const genStep = (x, y) => {
             setTimeout(() => {
