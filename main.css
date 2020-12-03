@@ -25,21 +25,37 @@
 }
 
 .no-top {
-    border-top: 1px solid rgba(255, 0, 0, 0.05);
+    border-top: 1px solid rgba(255, 0, 0, 0.02);
 }
 
 .no-bottom {
-    border-bottom: 1px solid rgba(255, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 0, 0, 0.02);
 }
 
 .no-left {
-    border-left: 1px solid rgba(255, 0, 0, 0.05);
+    border-left: 1px solid rgba(255, 0, 0, 0.02);
 }
 
 .no-right {
-    border-right: 1px solid rgba(255, 0, 0, 0.05);
+    border-right: 1px solid rgba(255, 0, 0, 0.02);
 }
 
 .visited {
-    background-color: rgba(255, 0, 0, 0.1);
+    background-color: rgba(255, 0, 0, 0.04);
+}
+
+.start {
+    background-color: green;
+}
+
+.finish {
+    background-color: red;
+}
+
+.visited-pathfinder {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.current-pathfinder {
+    background-color: yellow;
 }
