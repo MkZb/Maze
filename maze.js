@@ -23,11 +23,11 @@ class Maze {
         this.maze = []
         this.height = height;
         this.width = width;
-        for (let i = 0; i < height; i++) {
+        for (let i = 0; i < width; i++) {
             let column = document.createElement("div");
             let columnList = [];
             column.classList.add("column");
-            for (let j = 0; j < width; j++) {
+            for (let j = 0; j < height; j++) {
                 columnList.push(new Cell(i, j, column));
             }
             this.maze.push(columnList);
